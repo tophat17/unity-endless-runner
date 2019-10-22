@@ -297,7 +297,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227526218}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.54, y: 0.01, z: 0}
+  m_LocalPosition: {x: -3.72, y: 0.01, z: 0}
   m_LocalScale: {x: 0.42885894, y: 0.4411387, z: 0.497408}
   m_Children: []
   m_Father: {fileID: 0}
@@ -380,9 +380,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d375dc65e47409b48bfc2e35e5bfdca8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstacle: {fileID: 2779355363399169684, guid: 16c81d1f84992b840b7aab57e837be5f,
-    type: 3}
-  startTimeBetweenSpawn: 1.8
+  obstaclePatterns:
+  - {fileID: 4746268976461901333, guid: 89b7a54407ae0e247bdc779965183623, type: 3}
+  - {fileID: 1092470790775173670, guid: 629040e8530f453469b5900cd0f4c408, type: 3}
+  - {fileID: 4820027154398004250, guid: 33c32f2556f0f9f428b89ab2ae48b9f5, type: 3}
+  startTimeBetweenSpawn: 2
   decreseTime: 0.06
   minTime: 0.6
 --- !u!114 &1789298294

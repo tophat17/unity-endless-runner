@@ -1,32 +1,37 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
 
     private Vector2 targetPos;
-    public float movment;
+    public float movement;
 
     public float speed;
-    public float maxHight;
-    public float minHight;
+    public int maxHight;
+    public int minHight;
 
     public int health;
-    public int startTimer;
 
     void Update()
     {
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
         transform.position = Vector2.MoveTowards(transform.position, targetPos, speed * Time.deltaTime);
 
-        if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHight){
-            targetPos = new Vector2(transform.position.x, transform.position.y + movment);
+        const int stepSize = 2;
+        if (Input.GetKeyDown(KeyCode.UpArrow) && transform.position.y < maxHight - stepSize + 1){
+            targetPos = new Vector2(transform.position.x, transform.position.y + movement);
             
         }
-        else if(Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHight)
+        else if(Input.GetKeyDown(KeyCode.DownArrow) && transform.position.y > minHight + stepSize - 1)
         {
-            targetPos = new Vector2(transform.position.x, transform.position.y - movment);
+            targetPos = new Vector2(transform.position.x, transform.position.y - movement);
 
         }
     }
